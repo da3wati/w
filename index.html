@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+
+<meta name="theme-color" content="#eaf5fb">
+
+<title>دعوة البيبي وائل</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #eaf5fb;
+    font-family: "Cairo", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   COVER
+===================================================== */
+
+.cover-screen {
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100dvh;
+
+    background: #ffffff;
+
+    z-index: 99999;
+
+    cursor: pointer;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+
+.cover-image {
+
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+
+    background: #ffffff;
+}
+
+
+.cover-shade {
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.02),
+            rgba(255,255,255,0.06)
+        );
+
+    pointer-events: none;
+}
+
+
+.tap-hint {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 30px;
+
+    transform: translateX(-50%);
+
+    padding: 11px 25px;
+
+    border-radius: 35px;
+
+    background: rgba(255,255,255,0.78);
+
+    border: 1px solid rgba(255,255,255,0.95);
+
+    color: #000000;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 8px 28px rgba(60,100,130,0.12);
+
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+
+    animation: hintPulse 2s infinite;
+}
+
+
+@keyframes hintPulse {
+
+    0%,
+    100% {
+        opacity: 0.75;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-4px);
+    }
+}
+
+
+.cover-screen.opened {
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   INVITATION
+===================================================== */
+
+.invitation {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 100dvh;
+
+    overflow: hidden;
+
+    background: #eef7fb;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+
+.invitation.show {
+
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* الخلفية */
+
+.background-image {
+
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: fill;
+    object-position: center;
+
+    z-index: 0;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+
+.background-overlay {
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.01),
+            rgba(255,255,255,0.03)
+        );
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+    min-height: 100dvh;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    padding:
+        55px
+        18px
+        75px;
+}
+
+
+
+/* =====================================================
+   TOP
+===================================================== */
+
+.bismillah {
+
+    color: #000000;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    margin-bottom: 5px;
+
+    text-shadow:
+        0 1px 5px rgba(255,255,255,0.95);
+}
+
+
+.title {
+
+    font-family: "Aref Ruqaa", serif;
+
+    color: #000000;
+
+    font-size: clamp(55px, 15vw, 78px);
+
+    line-height: 1.05;
+
+    margin-bottom: 8px;
+
+    text-shadow:
+        0 2px 9px rgba(0,0,0,0.08);
+}
+
+
+.gold-line {
+
+    position: relative;
+
+    width: 165px;
+    height: 2px;
+
+    margin: 0 auto 24px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #c69b64,
+            transparent
+        );
+}
+
+
+.gold-line::before,
+.gold-line::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #c69b64;
+
+    font-size: 11px;
+}
+
+
+.gold-line::before {
+    right: 0;
+}
+
+.gold-line::after {
+    left: 0;
+}
+
+
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+.welcome {
+
+    width: min(100%, 390px);
+
+    color: #000000;
+
+    font-size: 15px;
+
+    line-height: 2.05;
+
+    font-weight: 500;
+
+    margin-bottom: 18px;
+
+    text-shadow:
+        0 1px 5px rgba(255,255,255,0.95);
+}
+
+
+
+/* =====================================================
+   BABY NAME
+===================================================== */
+
+.name-section {
+
+    margin-top: 5px;
+
+    margin-bottom: 23px;
+}
+
+
+.baby-name {
+
+    font-family: "Aref Ruqaa", serif;
+
+    color: #000000;
+
+    font-size: clamp(95px, 25vw, 135px);
+
+    line-height: 0.9;
+
+    text-shadow:
+        0 4px 12px rgba(0,0,0,0.10);
+}
+
+
+.baby-caption {
+
+    margin-top: 12px;
+
+    color: #000000;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+
+
+/* =====================================================
+   INFO CARD
+===================================================== */
+
+.info-card {
+
+    width: min(100%, 390px);
+
+    padding: 17px 20px;
+
+    border-radius: 27px;
+
+    background:
+        rgba(255,255,255,0.58);
+
+    border:
+        1px solid rgba(255,255,255,0.86);
+
+    box-shadow:
+        0 12px 32px rgba(55,95,120,0.10);
+
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+}
+
+
+.info-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    min-height: 61px;
+}
+
+
+.info-row + .info-row {
+
+    border-top:
+        1px solid rgba(65,105,130,0.10);
+}
+
+
+.icon {
+
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(222,239,248,0.9);
+
+    color: #477d9f;
+}
+
+
+.icon svg {
+
+    width: 21px;
+    height: 21px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+.info-text {
+
+    text-align: right;
+
+    min-width: 205px;
+}
+
+
+.info-label {
+
+    display: block;
+
+    color: #000000;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    margin-bottom: 2px;
+}
+
+
+.info-value {
+
+    display: block;
+
+    color: #000000;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+}
+
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+.count-title {
+
+    margin-top: 27px;
+
+    color: #000000;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.countdown {
+
+    direction: ltr;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+
+.count-box {
+
+    width: 66px;
+
+    height: 70px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.66);
+
+    border:
+        1px solid rgba(255,255,255,0.85);
+
+    box-shadow:
+        0 7px 21px rgba(60,100,125,0.09);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+.number {
+
+    color: #000000;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    font-weight: 700;
+}
+
+
+.label {
+
+    color: #000000;
+
+    font-size: 9px;
+
+    margin-top: 6px;
+}
+
+
+
+/* =====================================================
+   CLOSING
+===================================================== */
+
+.closing {
+
+    max-width: 350px;
+
+    margin-top: 24px;
+
+    color: #000000;
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    font-weight: 500;
+}
+
+
+.heart {
+
+    color: #c79b65;
+
+    font-size: 20px;
+
+    margin-bottom: 4px;
+}
+
+
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+.music-button {
+
+    position: fixed;
+
+    z-index: 1000;
+
+    right: 18px;
+    bottom: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,255,255,0.95);
+
+    background:
+        rgba(255,255,255,0.78);
+
+    color: #397092;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(55,95,120,0.14);
+
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(0.7);
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease,
+        transform 0.5s ease;
+}
+
+
+.music-button.show {
+
+    opacity: 1;
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+.music-button svg {
+
+    width: 22px;
+    height: 22px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+.music-button.playing {
+
+    animation: musicPulse 2s infinite;
+}
+
+
+@keyframes musicPulse {
+
+    0% {
+        box-shadow:
+            0 8px 25px rgba(55,95,120,0.14);
+    }
+
+    50% {
+        box-shadow:
+            0 8px 30px rgba(55,95,120,0.30);
+    }
+
+    100% {
+        box-shadow:
+            0 8px 25px rgba(55,95,120,0.14);
+    }
+}
+
+
+
+/* =====================================================
+   PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .content {
+        padding-top: 38px;
+    }
+
+    .welcome {
+        font-size: 13px;
+    }
+
+    .baby-name {
+        font-size: 92px;
+    }
+
+    .info-card {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .info-text {
+        min-width: 175px;
+    }
+
+    .info-value {
+        font-size: 15px;
+    }
+
+    .count-box {
+        width: 58px;
+        height: 64px;
+    }
+
+    .number {
+        font-size: 21px;
+    }
+}
+
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 700px) {
+
+    body {
+        background: #dcecf5;
+    }
+
+    .invitation {
+
+        max-width: 500px;
+
+        margin: 0 auto;
+
+        box-shadow:
+            0 0 50px rgba(45,90,120,0.12);
+    }
+
+    .cover-screen {
+        background: #dcecf5;
+    }
+
+    .cover-image {
+
+        max-width: 500px;
+
+        left: 50%;
+        right: auto;
+
+        transform: translateX(-50%);
+
+        width: 500px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<audio id="backgroundMusic"
+       src="music.mp3"
+       loop
+       preload="auto">
+</audio>
+
+
+
+<!-- =====================================================
+     COVER
+===================================================== -->
+
+<section class="cover-screen"
+         id="coverScreen"
+         onclick="openInvitation()">
+
+    <img
+        src="cover.png"
+        class="cover-image"
+        alt="دعوة البيبي وائل">
+
+    <div class="cover-shade"></div>
+
+    <div class="tap-hint">
+        اضغط لفتح الدعوة
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INVITATION
+===================================================== -->
+
+<main class="invitation"
+      id="invitation">
+
+
+    <img
+        src="background.png"
+        class="background-image"
+        alt=""
+        aria-hidden="true">
+
+
+    <div class="background-overlay"></div>
+
+
+
+    <div class="content">
+
+
+        <!-- TOP -->
+
+        <div class="bismillah">
+            بسم الله الرحمن الرحيم
+        </div>
+
+
+        <div class="title">
+            دعوة
+        </div>
+
+
+        <div class="gold-line"></div>
+
+
+
+        <!-- WELCOME -->
+
+        <div class="welcome">
+
+            الحمد لله الذي بنعمته تتم الصالحات،
+            وبفضل من الله ورحمته أكرمنا بمولودنا الغالي،
+            ويسعدنا أن نشارككم فرحتنا بهذه المناسبة الجميلة.
+
+        </div>
+
+
+
+        <!-- BABY NAME -->
+
+        <div class="name-section">
+
+            <div class="baby-name">
+                وائل
+            </div>
+
+            <div class="baby-caption">
+                صغيرنا الغالي
+            </div>
+
+        </div>
+
+
+
+        <!-- INFORMATION -->
+
+        <div class="info-card">
+
+
+            <!-- DATE -->
+
+            <div class="info-row">
+
+                <div class="icon">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <rect x="3"
+                              y="4"
+                              width="18"
+                              height="17"
+                              rx="2"></rect>
+
+                        <line x1="16"
+                              y1="2"
+                              x2="16"
+                              y2="6"></line>
+
+                        <line x1="8"
+                              y1="2"
+                              x2="8"
+                              y2="6"></line>
+
+                        <line x1="3"
+                              y1="9"
+                              x2="21"
+                              y2="9"></line>
+
+                    </svg>
+
+                </div>
+
+
+                <div class="info-text">
+
+                    <span class="info-label">
+                        التاريخ
+                    </span>
+
+                    <span class="info-value">
+                        3 أكتوبر 2026
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TIME -->
+
+            <div class="info-row">
+
+                <div class="icon">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <circle cx="12"
+                                cy="12"
+                                r="9"></circle>
+
+                        <polyline points="12,7 12,12 15,14"></polyline>
+
+                    </svg>
+
+                </div>
+
+
+                <div class="info-text">
+
+                    <span class="info-label">
+                        الساعة
+                    </span>
+
+                    <span class="info-value">
+                        14:30
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LOCATION -->
+
+            <div class="info-row">
+
+                <div class="icon">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M3 10.5L12 3l9 7.5"></path>
+
+                        <path d="M5 9.5V21h14V9.5"></path>
+
+                        <path d="M9 21v-6h6v6"></path>
+
+                    </svg>
+
+                </div>
+
+
+                <div class="info-text">
+
+                    <span class="info-label">
+                        المكان
+                    </span>
+
+                    <span class="info-value">
+                        في المنزل
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- COUNTDOWN -->
+
+        <div class="count-title">
+            لموعد لقائنا
+        </div>
+
+
+        <div class="countdown">
+
+
+            <div class="count-box">
+
+                <span class="number"
+                      id="days">
+                    00
+                </span>
+
+                <span class="label">
+                    يوم
+                </span>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <span class="number"
+                      id="hours">
+                    00
+                </span>
+
+                <span class="label">
+                    ساعة
+                </span>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <span class="number"
+                      id="minutes">
+                    00
+                </span>
+
+                <span class="label">
+                    دقيقة
+                </span>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <span class="number"
+                      id="seconds">
+                    00
+                </span>
+
+                <span class="label">
+                    ثانية
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CLOSING -->
+
+        <div class="closing">
+
+            <div class="heart">
+                ♥
+            </div>
+
+            حضوركم يزيد فرحتنا جمالاً،
+            وننتظر مشاركتكم لنا هذه اللحظات الجميلة.
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- MUSIC BUTTON -->
+
+    <button class="music-button"
+            id="musicButton"
+            onclick="toggleMusic(event)"
+            aria-label="تشغيل وإيقاف الموسيقى">
+
+
+        <svg id="musicOnIcon"
+             viewBox="0 0 24 24">
+
+            <path d="M9 18V5l10-2v13"></path>
+
+            <circle cx="6"
+                    cy="18"
+                    r="3"></circle>
+
+            <circle cx="16"
+                    cy="16"
+                    r="3"></circle>
+
+        </svg>
+
+
+        <svg id="musicOffIcon"
+             viewBox="0 0 24 24"
+             style="display:none;">
+
+            <path d="M9 18V5l10-2v13"></path>
+
+            <circle cx="6"
+                    cy="18"
+                    r="3"></circle>
+
+            <circle cx="16"
+                    cy="16"
+                    r="3"></circle>
+
+            <line x1="3"
+                  y1="3"
+                  x2="21"
+                  y2="21"></line>
+
+        </svg>
+
+
+    </button>
+
+
+</main>
+
+
+
+<script>
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+const coverScreen =
+    document.getElementById("coverScreen");
+
+const invitation =
+    document.getElementById("invitation");
+
+const music =
+    document.getElementById("backgroundMusic");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+const musicOnIcon =
+    document.getElementById("musicOnIcon");
+
+const musicOffIcon =
+    document.getElementById("musicOffIcon");
+
+
+
+/* =====================================================
+   OPEN INVITATION
+===================================================== */
+
+function openInvitation() {
+
+    /* تشغيل الموسيقى عند نفس ضغطة المستخدم */
+
+    music.volume = 0.75;
+
+    const playPromise = music.play();
+
+    if (playPromise !== undefined) {
+
+        playPromise
+            .then(() => {
+
+                setMusicState(true);
+
+            })
+            .catch(() => {
+
+                setMusicState(false);
+
+            });
+    }
+
+
+    /* إخفاء الواجهة */
+
+    coverScreen.classList.add("opened");
+
+
+    /* إظهار الدعوة */
+
+    setTimeout(() => {
+
+        invitation.classList.add("show");
+
+        musicButton.classList.add("show");
+
+    }, 350);
+
+
+    coverScreen.onclick = null;
+}
+
+
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+function toggleMusic(event) {
+
+    event.stopPropagation();
+
+    if (music.paused) {
+
+        music.play()
+            .then(() => {
+
+                setMusicState(true);
+
+            })
+            .catch(() => {});
+
+    }
+
+    else {
+
+        music.pause();
+
+        setMusicState(false);
+    }
+}
+
+
+
+/* =====================================================
+   MUSIC STATE
+===================================================== */
+
+function setMusicState(isPlaying) {
+
+    if (isPlaying) {
+
+        musicButton.classList.add("playing");
+
+        musicOnIcon.style.display = "block";
+
+        musicOffIcon.style.display = "none";
+
+    }
+
+    else {
+
+        musicButton.classList.remove("playing");
+
+        musicOnIcon.style.display = "none";
+
+        musicOffIcon.style.display = "block";
+    }
+}
+
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+const eventDate =
+    new Date("2026-10-03T14:30:00+01:00").getTime();
+
+
+function updateCountdown() {
+
+    const now =
+        new Date().getTime();
+
+    const difference =
+        eventDate - now;
+
+
+    if (difference <= 0) {
+
+        document.getElementById("days").textContent = "00";
+
+        document.getElementById("hours").textContent = "00";
+
+        document.getElementById("minutes").textContent = "00";
+
+        document.getElementById("seconds").textContent = "00";
+
+        return;
+    }
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (difference %
+            (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference %
+            (1000 * 60 * 60)) /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference %
+            (1000 * 60)) /
+            1000
+        );
+
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+}
+
+
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+</script>
+
+</body>
+</html>
